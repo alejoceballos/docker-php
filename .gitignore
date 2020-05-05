@@ -1,0 +1,19 @@
+# IntelliJ project files
+.idea
+*.iml
+
+###> symfony/framework-bundle ###
+backend-app/my-project/.env.local
+backend-app/my-project/.env.local.php
+backend-app/my-project/.env.*.local
+backend-app/my-project/config/secrets/prod/prod.decrypt.private.php
+backend-app/my-project/public/bundles/
+backend-app/my-project/var/
+backend-app/my-project/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+.phpunit.result.cache
+phpunit.xml
+###< symfony/phpunit-bridge ###
