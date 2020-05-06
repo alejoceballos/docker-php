@@ -29,7 +29,8 @@ References:
 - https://www.pascallandau.com/blog/php-php-fpm-and-nginx-on-docker-in-windows-10/
 - https://dev.to/martinpham/symfony-5-development-with-docker-4hj8
 - https://www.nginx.com/resources/wiki/start/topics/recipes/symfony/
-- [*] http://geekyplatypus.com/dockerise-your-php-application-with-nginx-and-php7-fpm/
+- http://geekyplatypus.com/dockerise-your-php-application-with-nginx-and-php7-fpm/
+- [*] https://symfony.com/doc/current/setup/web_server_configuration.html#nginx
 
 [*] _This was the best development configuration for NGINX to communicate to PHP-FPM. Not a production one though._
 

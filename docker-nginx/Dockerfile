@@ -2,6 +2,7 @@
 #   - https://hub.docker.com/_/nginx
 #   - https://github.com/docker-library/docs/blob/master/php/README.md#supported-tags-and-respective-dockerfile-links
 #   - http://geekyplatypus.com/dockerise-your-php-application-with-nginx-and-php7-fpm/
+#   - https://symfony.com/doc/current/setup/web_server_configuration.html#nginx
 
 # Nginx 1.17 under debian buster-slim
 FROM nginx:1.17

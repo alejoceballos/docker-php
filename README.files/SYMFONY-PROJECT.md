@@ -147,6 +147,7 @@ bin/console make:controller DefaultController
 
  Next: Open your new controller class and add some pages!
 ```
+There should be possible to access the newly created page rendered by the controller at `http://localhost:8080/default`. 
 
 #### Pitfall
 **NOTE (again):** If the project wasn't created with the `--full` flag the following error will be displayed:
@@ -163,6 +164,90 @@ and [Doctrine](SYMFONY-BUNDLES.md#doctrine).
 
 The previous command will create a class (controller), responsible for rendering an html (template) and reachable 
 through a route (configuration or annotation).
+```php
+<?php
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
+
+class DefaultController extends AbstractController
+{
+    /**
+     * @Route("/default", name="default")
+     */
+    public function index()
+    {
+        return $this->render('default/index.html.twig', [
+            'controller_name' => 'DefaultController',
+        ]);
+    }
+}
+```
+
+One interesting detail on this class creation is the namespace starting with `App`. It is defined in the `composer.json`
+file. 
+```smartyconfig
+    .
+    .
+    .
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    .
+    .
+    .
+```
+So if the base namespace needs to mirror the application name, change `App` for the one that suits it better, 
+`MyProject` for example.
+
+#### The controller
+Controllers are always created in the `Controller` folder. In this Symfony version there is no need to explicitly define 
+the controller inside a yaml configuration file since they are automatically loaded thanks to a general configuration in
+the `config/services.yaml`.
+```smartyconfig
+    .
+    .
+    .
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+    .
+    .
+    .
+```
+
+Even thought there is no need to extend from `AbstractController`, it delivers out-of-the-box helper methods like the 
+one used to render the `twig` template. 
+
+#### The route
+In previous versions of Symfony, the way to declare a route to this controller would be to define it in 
+`config/routes.yaml`.
+```smartyconfig
+default:
+    path: /default
+    controller: App\Controller\DefaultController::index
+```
+
+Using annotations in the method's comment it is possible to achieve the same result without overloading the routes file.
+```
+@Route("/default", name="default")
+```
+
+This configuration (file or annotation) redirects requests from the `/default` url path to the `index` method in the
+`DefaultController` class. 
+
+#### The template
+The default template engine in the Symfony framework is [Twig](https://twig.symfony.com/). It is modern template engine
+like many others, and although Single Page Applications (SPAs) are the hype of the moment throwing server compiled
+template engines to ostracism, it may be very helpful for creating dynamic emails or other form of less dynamic 
+information.
+
+The maker command generates a default template page in the `templates` folder. Check for 
+`templates/default/index.html.twig`.
 
 ---
 
