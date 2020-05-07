@@ -15,12 +15,15 @@ However, I'll try to work some more mature architecture or... Whatever, just mas
 - [x] Use Last PHP version on docker
 - [x] Use last Symfony version on the PHP container
 - [ ] Use some MySQL-like database (MariaDB, Percona, Oracle) on Docker
+- [ ] Use a Continuous Integration tool
+- [ ] Use some cache mechanism (Redis?)
 - [ ] Use RabbitMQ on Docker
-- [ ] MAYBE use some caching mechanism (Redis?)
-- [ ] MAYBE fool around with Elasticsearch and Kibana for Monitoring
+- [ ] [MAYBE] Fool around with Elasticsearch and Kibana for Monitoring
+- [ ] [MAYBE] Fool around with GraphQL as an anti-corruption Layer
 
 ### Architectural goals
 - [ ] Create a simple SPA Web Application with authentication & authorization and database access
+- [ ] Use third-party authentication
 - [ ] Create services integration using a Message Broker
 - [ ] Create a monitoring mechanism to check application health
 
