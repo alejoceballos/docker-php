@@ -14,6 +14,7 @@ However, I'll try to work some more mature architecture or... Whatever, just mas
 - [x] Use Last NGINX version on docker
 - [x] Use Last PHP version on docker
 - [x] Use last Symfony version on the PHP container
+- [ ] Use Monolog as logger mechanism 
 - [ ] Use some MySQL-like database (MariaDB, Percona, Oracle) on Docker
 - [ ] Use a Continuous Integration tool
 - [ ] Use some cache mechanism (Redis?)
@@ -52,5 +53,9 @@ However, I'll try to work some more mature architecture or... Whatever, just mas
 ## Index
 
 1. [Infrastructure: Create your Docker containers - NGINX and PHP-FPM with Symfony](README.files/DOCKER.md);
-2. [Development: Create your Symfony application](README.files/SYMFONY-PROJECT.md)  
-3. [TBD](README.md)
+2. [Development: Create your Symfony application](README.files/SYMFONY-PROJECT.md) 
+3. [Development: Controllers](README.files/SYMFONY-CONTROLLER.md)
+4. [Development: Views](README.files/SYMFONY-VIEW.md)
+5. [Development: Entities](README.files/SYMFONY-ENTITY.md)
+5. [Development: Services](README.files/SYMFONY-SERVICE.md)
+6. TBD

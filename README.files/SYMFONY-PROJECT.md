@@ -221,7 +221,24 @@ the `config/services.yaml`.
 ```
 
 Even thought there is no need to extend from `AbstractController`, it delivers out-of-the-box helper methods like the 
-one used to render the `twig` template. 
+one used to render the `twig` template or another to return a JSON response, for example:
+```php
+<?php
+    .
+    .
+    .
+    /**
+     * @Route("/json", name="whatever")
+     */
+    public function notTheIndex()
+    {
+        return $this->json(['data' => 'response data']);
+    }
+    .
+    .
+    .
+```
+Check `http://127.0.0.1:8080/json`. The JSON is returned as the response.
 
 #### The route
 In previous versions of Symfony, the way to declare a route to this controller would be to define it in 
@@ -251,4 +268,4 @@ The maker command generates a default template page in the `templates` folder. C
 
 ---
 
-[Next: TBD >>](SYMFONY-PROJECT.md)
+[Next: Symfony Controllers >>](SYMFONY-CONTROLLER.md)

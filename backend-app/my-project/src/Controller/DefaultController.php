@@ -12,8 +12,18 @@ class DefaultController extends AbstractController
      */
     public function index()
     {
+        $this->addFlash('notice', "Loaded!");
+
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
         ]);
+    }
+
+    /**
+     * @Route("/json", name="whatever")
+     */
+    public function notTheIndex()
+    {
+        return $this->json(['data' => 'response data']);
     }
 }
